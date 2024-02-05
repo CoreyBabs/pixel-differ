@@ -35,10 +35,12 @@ async function setImage(selected) {
 	}
 	
 	let path = await window.__TAURI__.tauri.convertFileSrc(selected);	
-	console.log(path);
 	let div = document.getElementById("image_container");
 	div.replaceChildren([]);
 	let img = document.createElement("img");
 	img.src = path;
 	div.appendChild(img);
+
+	invoke('corrupt_image', { inputPath: selected, threshold: 10 })
+		.then((response) => console.log(response));
 }
