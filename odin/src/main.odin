@@ -28,15 +28,6 @@ main :: proc () {
 		}
 	}
 
-	// tb : strings.Builder
-	// strings.builder_init_len_cap(&tb, 0, 4)
-	// strings.write_string(&tb, "test")
-	//
-	// test, err := strings.to_cstring(&tb)
-	//
-	// fmt.printfln("%v", test)
-	// strings.builder_destroy(&tb)
-
 	rl.InitWindow(DIM, DIM, "Pixel Differ")
 	rl.SetTargetFPS(60)
 
